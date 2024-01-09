@@ -4,7 +4,7 @@ const iframe = document.querySelector('#vimeo-player');
 const player = new Player(iframe);
 
 player.on('play', function () {
-  console.log('played the video!');
+  console.log('played the videos!');
 });
 
 player.getVideoTitle().then(function (title) {
