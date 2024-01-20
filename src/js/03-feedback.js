@@ -4,6 +4,7 @@ const form = document.querySelector('.feedback-form');
 const emailInput = form.elements['email'];
 const messageInput = form.elements['message'];
 const localStorageKey = 'feedback-form-state';
+let obj = {};
 
 emailInput.value = localStorage.getItem(localStorageKey) ?? '';
 messageInput.value = localStorage.getItem(localStorageKey) ?? '';
@@ -19,6 +20,9 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   console.log('email:' + emailInput.value);
   console.log('message:' + messageInput.value);
+  obj.email = emailInput.value;
+  obj.message = messageInput.value;
+  console.log(obj);
   localStorage.removeItem(localStorageKey);
   form.reset();
 });
